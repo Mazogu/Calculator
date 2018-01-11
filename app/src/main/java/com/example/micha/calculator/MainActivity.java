@@ -1,5 +1,6 @@
 package com.example.micha.calculator;
 
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +21,15 @@ public class MainActivity extends AppCompatActivity {
     private Button clear;
     private Button sign;
     private Button square;
+    private Button thirdPower;
+    private Button sqrt;
+    private Button inverse;
+    private Button cos;
+    private Button sin;
+    private Button tan;
+    private Button ten;
+    private Button factorial;
+    private Button ln;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
         clear = findViewById(R.id.clear);
         sign = findViewById(R.id.negpos);
         square = findViewById(R.id.square);
+        thirdPower = findViewById(R.id.third);
+        sqrt = findViewById(R.id.sqrt);
+        inverse = findViewById(R.id.inverse);
+        ten = findViewById(R.id.ten);
+        factorial = findViewById(R.id.factorial);
+        ln = findViewById(R.id.ln);
+
 
         dot.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
                         case "-":
                             answer.setText(Double.toString(argumentOne - argumentTwo));
                             break;
+                        case "^":
+                            answer.setText(Double.toString(Math.pow(argumentOne,argumentTwo)));
                         default:
                             Log.d(TAG, "Not sure what happened: " + operation);
                     }
@@ -97,11 +116,43 @@ public class MainActivity extends AppCompatActivity {
         square.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String number = math.getText().toString();
-                double value = Double.parseDouble(number);
-                math.setText(Double.toString(value * value));
+                setPower(2);
             }
         });
+        int orientation = getApplicationContext().getResources().getConfiguration().orientation;
+
+        if(orientation == Configuration.ORIENTATION_LANDSCAPE) {
+             thirdPower.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View view) {
+            setPower(3);
+            }
+            });
+             sqrt.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View view) {
+            setPower(0.5);
+            }
+            });
+            factorial.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(operation.equals("")){
+                        Double number = Double.parseDouble(math.getText().toString());
+                        Double factorial = 1.0;
+                        for(int i = 1; i <= number; i++){
+                            factorial *= i;
+                        }
+                        math.setText(Double.toString(factorial));
+                    }
+                }
+            });
+
+        }
+    }
+
+    private void setPower(double n){
+        String number = math.getText().toString();
+        double value = Double.parseDouble(number);
+        math.setText(Double.toString(Math.pow(value,n)));
     }
 
     public void addNumber(View view) {
@@ -116,11 +167,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
     public void setOperation(View view) {
         if (operation.equals("")) {
             argumentOne = Double.parseDouble(math.getText().toString());
             operation = ((Button) view).getText().toString();
             math.setText(math.getText().toString()+" "+operation+" ");
+        }
+    }
+
+    public void hypoth(View view) {
+        if(operation.equals("")) {
+            Double radians = Double.parseDouble(math.getText().toString()) * Math.PI/180;
+            String button = ((Button)view).getText().toString();
+            switch (button){
+                case "cos":
+                    math.setText(Double.toString(Math.cos(radians)));
+                    break;
+                case "sin":
+                    math.setText(Double.toString(Math.sin(radians)));
+                    break;
+                case "tan":
+                    math.setText(Double.toString(Math.tan(radians)));
+                    break;
+            }
         }
     }
 }

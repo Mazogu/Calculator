@@ -33,9 +33,10 @@
         android:columnCount="6"
         android:rowCount="5">
         <Button
-            android:text="sin"
+            android:text="@string/sin"
             android:id="@+id/sin"
             android:gravity="center"
+            android:onClick="hypoth"
             />
         <Button
         android:text="sqrt"
@@ -64,9 +65,10 @@
             android:onClick="setOperation"
             />
         <Button
-            android:text="cos"
+            android:text="@string/cos"
             android:id="@+id/cos"
             android:gravity="center"
+            android:onClick="hypoth"
             />
         <Button
             android:text="!"
@@ -98,9 +100,10 @@
             android:onClick="setOperation"
             />
         <Button
-            android:text="tan"
+            android:text="@string/tan"
             android:id="@+id/tan"
             android:gravity="center"
+            android:onClick="hypoth"
             />
         <Button
             android:text="1/x"

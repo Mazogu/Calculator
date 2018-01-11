@@ -5,4 +5,7 @@
     <string name="multiply_string">x</string>
     <string name="subtract_string">-</string>
     <string name="add_string">+</string>
+    <string name="tan">tan</string>
+    <string name="sin">sin</string>
+    <string name="cos">cos</string>
 </resources>
