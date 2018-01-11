@@ -56,9 +56,10 @@
             android:gravity="center"
             />
         <Button
-            android:text="÷"
+            android:text="@string/divide_string"
             android:id="@+id/divide"
             android:gravity="center"
+            android:onClick="setOperation"
             />
         <Button
             android:text="7"
@@ -79,9 +80,10 @@
             android:onClick="addNumber"
             />
         <Button
-            android:text="x"
+            android:text="@string/multiply_string"
             android:id="@+id/multiply"
             android:gravity="center"
+            android:onClick="setOperation"
             />
         <Button
             android:text="4"
@@ -102,9 +104,10 @@
             android:onClick="addNumber"
             />
         <Button
-            android:text="-"
+            android:text="@string/subtract_string"
             android:id="@+id/subtract"
             android:gravity="center"
+            android:onClick="setOperation"
             />
         <Button
             android:text="1"
@@ -125,9 +128,10 @@
             android:onClick="addNumber"
             />
         <Button
-            android:text="+"
+            android:text="@string/add_string"
             android:id="@+id/add"
             android:gravity="center"
+            android:onClick="setOperation"
             />
         <Button
             android:text="@string/zero_string"

@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Calculator</string>
     <string name="zero_string">0</string>
+    <string name="divide_string">÷</string>
+    <string name="multiply_string">x</string>
+    <string name="subtract_string">-</string>
+    <string name="add_string">+</string>
 </resources>
