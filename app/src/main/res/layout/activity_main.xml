@@ -130,7 +130,7 @@
             android:gravity="center"
             />
         <Button
-            android:text="0"
+            android:text="@string/zero_string"
             android:id="@+id/zero"
             android:gravity="center"
             android:layout_gravity="fill_horizontal"
@@ -138,10 +138,12 @@
             android:onClick="addNumber"
             />
         <Button
+            android:id="@+id/dot"
             android:text="."
             android:gravity="center"
             />
         <Button
+            android:id="@+id/equals"
             android:text="="
             android:gravity="center"
             />
