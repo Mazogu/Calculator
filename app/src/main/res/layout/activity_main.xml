@@ -13,17 +13,23 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/math"
             android:layout_weight="1"
+            android:textSize="30dp"
             android:text="0"
+            android:textAlignment="viewEnd"
             android:layout_marginEnd="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
         <TextView
+            android:id="@+id/answer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginStart="10dp"
+            android:textSize="30dp"
+            android:textAlignment="viewEnd"
             android:hint="Answer"/>
     </LinearLayout>
 
@@ -31,76 +37,105 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
         android:columnCount="4"
         android:rowCount="4">
         <Button
             android:text="C"
+            android:id="@+id/clear"
             android:gravity="center"
             />
         <Button
             android:text="+/-"
+            android:id="@+id/negpos"
             android:gravity="center"
             />
         <Button
             android:text="x^2"
+            android:id="@+id/square"
             android:gravity="center"
             />
         <Button
             android:text="÷"
+            android:id="@+id/divide"
             android:gravity="center"
             />
         <Button
             android:text="7"
+            android:id="@+id/seven"
             android:gravity="center"
+            android:onClick="addNumber"
             />
         <Button
             android:text="8"
+            android:id="@+id/eight"
             android:gravity="center"
+            android:onClick="addNumber"
             />
         <Button
             android:text="9"
+            android:id="@+id/nine"
             android:gravity="center"
+            android:onClick="addNumber"
             />
         <Button
             android:text="x"
+            android:id="@+id/multiply"
             android:gravity="center"
             />
         <Button
             android:text="4"
+            android:id="@+id/four"
             android:gravity="center"
+            android:onClick="addNumber"
             />
         <Button
             android:text="5"
+            android:id="@+id/five"
             android:gravity="center"
+            android:onClick="addNumber"
             />
         <Button
             android:text="6"
+            android:id="@+id/six"
             android:gravity="center"
+            android:onClick="addNumber"
             />
         <Button
             android:text="-"
+            android:id="@+id/subtract"
             android:gravity="center"
             />
         <Button
             android:text="1"
+            android:id="@+id/one"
             android:gravity="center"
+            android:onClick="addNumber"
             />
         <Button
             android:text="2"
+            android:id="@+id/two"
             android:gravity="center"
+            android:onClick="addNumber"
             />
         <Button
             android:text="3"
+            android:id="@+id/three"
             android:gravity="center"
+            android:onClick="addNumber"
             />
         <Button
             android:text="+"
+            android:id="@+id/add"
             android:gravity="center"
             />
         <Button
             android:text="0"
+            android:id="@+id/zero"
             android:gravity="center"
+            android:layout_gravity="fill_horizontal"
             android:layout_columnSpan="2"
+            android:onClick="addNumber"
             />
         <Button
             android:text="."
